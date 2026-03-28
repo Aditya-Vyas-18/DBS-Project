@@ -1,0 +1,190 @@
+.item-card {
+  text-decoration: none;
+  color: inherit;
+  display: block;
+  transition: transform 0.15s, border-color 0.15s;
+}
+.item-card:hover {
+  transform: translateY(-2px);
+  border-color: var(--accent-dim);
+  text-decoration: none;
+}
+
+.item-price {
+  font-family: var(--mono);
+  font-size: 1.15rem;
+  font-weight: 600;
+  color: var(--success);
+  margin-bottom: 0.35rem;
+}
+
+.item-title {
+  font-size: 1.05rem;
+  font-weight: 600;
+  margin: 0 0 0.35rem;
+  line-height: 1.3;
+}
+
+.item-meta {
+  margin: 0;
+  font-size: 0.85rem;
+}
+
+.item-detail .back-link {
+  display: inline-block;
+  margin-bottom: 1rem;
+}
+
+.item-detail-card {
+  max-width: 640px;
+}
+
+.item-detail-top {
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+  flex-wrap: wrap;
+}
+
+.status {
+  font-size: 0.75rem;
+  font-weight: 600;
+  text-transform: uppercase;
+  padding: 0.2rem 0.5rem;
+  border-radius: 6px;
+}
+.status-active {
+  background: rgba(52, 211, 153, 0.15);
+  color: var(--success);
+}
+.status-sold,
+.status-withdrawn {
+  background: var(--surface2);
+  color: var(--muted);
+}
+
+.item-detail-price {
+  font-size: 1.75rem;
+  font-weight: 700;
+  font-family: var(--mono);
+  color: var(--success);
+  margin: 0.5rem 0;
+}
+
+.item-description h3 {
+  font-size: 0.9rem;
+  color: var(--muted);
+  margin: 1.25rem 0 0.5rem;
+}
+
+.item-description p {
+  margin: 0;
+  white-space: pre-wrap;
+}
+
+.item-detail-actions {
+  margin: 1rem 0 0;
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  gap: 0.75rem;
+}
+
+.item-buy-hint {
+  margin: 0;
+  font-size: 0.95rem;
+}
+
+.item-buy-error {
+  margin: 0.75rem 0 0;
+}
+
+.item-purchased-note {
+  margin: 0;
+  font-size: 0.95rem;
+  font-weight: 600;
+  color: var(--success);
+}
+
+.btn-danger {
+  border-color: rgba(248, 113, 113, 0.4);
+  color: #fecaca;
+  background: rgba(127, 29, 29, 0.35);
+}
+.btn-danger:hover {
+  filter: brightness(1.12);
+  border-color: rgba(248, 113, 113, 0.55);
+}
+
+.item-comments-card {
+  max-width: 640px;
+  margin-top: 1.25rem;
+}
+
+.item-comments-title {
+  font-size: 1.15rem;
+  font-weight: 600;
+  margin: 0 0 0.35rem;
+}
+
+.item-comments-intro,
+.item-comments-closed {
+  font-size: 0.9rem;
+  margin: 0 0 1rem;
+  line-height: 1.45;
+}
+
+.item-comments-list {
+  list-style: none;
+  margin: 0 0 1.25rem;
+  padding: 0;
+  display: flex;
+  flex-direction: column;
+  gap: 1rem;
+}
+
+.item-comment {
+  padding: 0.85rem 1rem;
+  background: var(--surface2);
+  border: 1px solid var(--border);
+  border-radius: 8px;
+}
+
+.item-comment-meta {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  gap: 0.5rem;
+  margin-bottom: 0.4rem;
+}
+
+.item-comment-author {
+  font-weight: 600;
+}
+
+.item-comment-badge {
+  font-size: 0.7rem;
+  font-weight: 700;
+  text-transform: uppercase;
+  letter-spacing: 0.04em;
+  padding: 0.15rem 0.45rem;
+  border-radius: 4px;
+  background: rgba(61, 156, 245, 0.2);
+  color: var(--accent);
+}
+
+.item-comment-date {
+  font-size: 0.8rem;
+  margin-left: auto;
+}
+
+.item-comment-body {
+  margin: 0;
+  white-space: pre-wrap;
+  font-size: 0.95rem;
+  line-height: 1.45;
+}
+
+.item-comment-form {
+  margin-top: 0.5rem;
+}

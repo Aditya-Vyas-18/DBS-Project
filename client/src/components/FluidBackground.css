@@ -1,0 +1,180 @@
+.fluid-bg {
+  position: fixed;
+  inset: 0;
+  z-index: 0;
+  overflow: hidden;
+  pointer-events: none;
+}
+
+.fluid-mesh {
+  position: absolute;
+  inset: -20%;
+  background:
+    radial-gradient(ellipse 80% 50% at 20% 40%, rgba(61, 156, 245, 0.18) 0%, transparent 55%),
+    radial-gradient(ellipse 70% 60% at 80% 20%, rgba(167, 139, 250, 0.14) 0%, transparent 50%),
+    radial-gradient(ellipse 60% 50% at 60% 85%, rgba(52, 211, 153, 0.08) 0%, transparent 45%);
+  animation: fluid-mesh-shift 22s ease-in-out infinite;
+}
+
+.fluid-blob {
+  position: absolute;
+  filter: blur(56px);
+  opacity: 0.55;
+  will-change: transform, border-radius;
+}
+
+.fluid-blob--1 {
+  width: min(55vw, 520px);
+  height: min(55vw, 520px);
+  left: -8%;
+  top: 10%;
+  background: radial-gradient(
+    circle at 35% 35%,
+    rgba(61, 156, 245, 0.55),
+    rgba(61, 156, 245, 0.08) 65%,
+    transparent 75%
+  );
+  border-radius: 60% 40% 30% 70% / 60% 30% 70% 40%;
+  animation: fluid-morph-a 18s ease-in-out infinite, fluid-drift-a 24s ease-in-out infinite;
+}
+
+.fluid-blob--2 {
+  width: min(48vw, 440px);
+  height: min(48vw, 440px);
+  right: -5%;
+  top: 35%;
+  background: radial-gradient(
+    circle at 40% 50%,
+    rgba(167, 139, 250, 0.45),
+    rgba(99, 102, 241, 0.12) 60%,
+    transparent 72%
+  );
+  border-radius: 40% 60% 70% 30% / 40% 50% 60% 50%;
+  animation: fluid-morph-b 20s ease-in-out infinite, fluid-drift-b 28s ease-in-out infinite;
+}
+
+.fluid-blob--3 {
+  width: min(42vw, 380px);
+  height: min(42vw, 380px);
+  left: 25%;
+  bottom: -5%;
+  background: radial-gradient(
+    circle at 50% 40%,
+    rgba(45, 212, 191, 0.22),
+    rgba(61, 156, 245, 0.12) 55%,
+    transparent 70%
+  );
+  border-radius: 50% 50% 35% 65% / 55% 45% 55% 45%;
+  animation: fluid-morph-c 16s ease-in-out infinite, fluid-drift-c 22s ease-in-out infinite;
+}
+
+.fluid-shine {
+  position: absolute;
+  inset: 0;
+  background:
+    linear-gradient(125deg, rgba(255, 255, 255, 0.04) 0%, transparent 42%),
+    linear-gradient(215deg, rgba(255, 255, 255, 0.02) 0%, transparent 38%);
+  animation: fluid-shine 14s ease-in-out infinite alternate;
+}
+
+@keyframes fluid-mesh-shift {
+  0%,
+  100% {
+    transform: translate(0, 0) scale(1);
+    opacity: 1;
+  }
+  33% {
+    transform: translate(3%, -2%) scale(1.03);
+    opacity: 0.95;
+  }
+  66% {
+    transform: translate(-2%, 3%) scale(0.98);
+    opacity: 1;
+  }
+}
+
+@keyframes fluid-morph-a {
+  0%,
+  100% {
+    border-radius: 60% 40% 30% 70% / 60% 30% 70% 40%;
+  }
+  50% {
+    border-radius: 30% 60% 70% 40% / 50% 60% 30% 60%;
+  }
+}
+
+@keyframes fluid-morph-b {
+  0%,
+  100% {
+    border-radius: 40% 60% 70% 30% / 40% 50% 60% 50%;
+  }
+  50% {
+    border-radius: 65% 35% 45% 55% / 45% 55% 45% 55%;
+  }
+}
+
+@keyframes fluid-morph-c {
+  0%,
+  100% {
+    border-radius: 50% 50% 35% 65% / 55% 45% 55% 45%;
+  }
+  50% {
+    border-radius: 35% 65% 55% 45% / 60% 40% 60% 40%;
+  }
+}
+
+@keyframes fluid-drift-a {
+  0%,
+  100% {
+    transform: translate(0, 0) rotate(0deg);
+  }
+  50% {
+    transform: translate(8%, 5%) rotate(12deg);
+  }
+}
+
+@keyframes fluid-drift-b {
+  0%,
+  100% {
+    transform: translate(0, 0) rotate(0deg);
+  }
+  50% {
+    transform: translate(-6%, 8%) rotate(-10deg);
+  }
+}
+
+@keyframes fluid-drift-c {
+  0%,
+  100% {
+    transform: translate(0, 0) scale(1);
+  }
+  50% {
+    transform: translate(4%, -6%) scale(1.06);
+  }
+}
+
+@keyframes fluid-shine {
+  0% {
+    opacity: 0.6;
+  }
+  100% {
+    opacity: 1;
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .fluid-mesh,
+  .fluid-blob,
+  .fluid-shine {
+    animation: none;
+  }
+  .fluid-blob--1 {
+    transform: translate(4%, 4%);
+  }
+  .fluid-blob--2 {
+    transform: translate(-4%, 0);
+  }
+  .fluid-blob--3 {
+    transform: translate(0, -4%);
+  }
+}
