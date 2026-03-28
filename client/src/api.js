@@ -1,4 +1,4 @@
-const base = 'https://dbs-project-uclm.onrender.com/api';
+const base = 'https://dbs-project-uclm.onrender.com';
 
 function getToken() {
   return localStorage.getItem('token');
